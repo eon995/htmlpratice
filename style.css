@@ -162,14 +162,14 @@ p {
 
 .section_container {
     max-width: 1200px;
-
+  position:center;
 }
 
 /*About*/
 .stack {
     display: flex;
     flex-direction: column;
-    margin: 80px 0;
+    margin: 80px auto;
 }
 
 .stack_icon {
@@ -218,6 +218,7 @@ p {
 /*Skill*/
 #skills {
     background-color: var(--color-yellow);
+    display: flex;
 }
 
 .skill {
@@ -229,6 +230,7 @@ p {
     display: flex;
     color: var(--color-light-white);
     justify-content: center;
+    min-width:400px;
 
 }
 
@@ -274,3 +276,80 @@ p {
     padding: 20px;
 }
 
+/*Work*/
+.work_categories {
+    margin : 40px;
+}
+
+.category_btn {
+    border: 1px solid var(--color-dark-white);
+    border-radius: 4px;
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+
+}
+.category_btn:hover,.category_btn.active {
+    background-color: var(--color-blue);
+    color:var(--color-white);
+
+}
+.category_btn.active,.category_count.active,
+.category_btn:hover, .category_count:hover {
+    opacity: 1;
+    top: 0;
+}
+
+.category_count {
+    background-color: var(--color-orange);
+    border-radius: 50%;
+    color: var(--color-white);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+    position:relative;
+    top: -20px;
+    left: 40px;
+    opacity: 0;
+    transition: all 300ms ease;
+
+
+}
+
+/*Testimonials*/
+#testimonials {
+    background-color: var(--color-light-grey);
+}
+
+.testimonials {
+    margin: 40px;
+
+}
+.testimonial{
+    display: flex;
+
+}
+.testimonial_avarta {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: auto;
+}
+.testimonial_speach-bubble {
+    padding : 20px;
+    background-color: var(--color-light-white);
+    margin : 32px;
+    border-radius: 4px;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+/*Contact*/
+#contact {
+    background-color: #73aace;
+}
+
+.contact_title,.contact_links,.contact_email {
+    color : white;
+
+}
