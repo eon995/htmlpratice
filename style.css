@@ -95,6 +95,12 @@ p {
     justify-content: space-between;
     background-color: cadetblue;
     align-items: center;
+    position:fixed;
+    width:100%;
+}
+#navbar.navbar-dark {
+    background-color: cadetblue;
+    opacity: 0.7 ;
 }
 
 .navbar_menu {
@@ -122,12 +128,21 @@ p {
     font-weight: var(--weight-semi-bold);
 
 }
+.navbar_toggle-btn {
+    position:absolute;
+    top:5px;
+    right:32px;
+    font-size:24px;
+    color: var(--color-light-white);
+    display: none;
+}
 
 /*Home*/
 #Home {
     background-color: black;
     text-align: center;
     padding: 40px;
+    padding-top: 150px;
 
 }
 
@@ -162,7 +177,7 @@ p {
 
 .section_container {
     max-width: 1200px;
-  position:center;
+    margin: auto;
 }
 
 /*About*/
@@ -218,7 +233,7 @@ p {
 /*Skill*/
 #skills {
     background-color: var(--color-yellow);
-    display: flex;
+
 }
 
 .skill {
@@ -230,7 +245,7 @@ p {
     display: flex;
     color: var(--color-light-white);
     justify-content: center;
-    min-width:400px;
+
 
 }
 
@@ -340,16 +355,42 @@ p {
     background-color: var(--color-light-white);
     margin : 32px;
     border-radius: 4px;
-    min-height: 100px;
+
     max-height: 200px;
 }
 
 /*Contact*/
 #contact {
-    background-color: #73aace;
+    background-color: cadetblue;
 }
 
 .contact_title,.contact_links,.contact_email {
     color : white;
 
+}
+@media screen and (max-width: 768px) {
+    .navbar_toggle-btn {
+        display: block;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar_menu {
+        flex-direction: column;
+        text-align:center;
+        display:none;
+
+    }
+    .stack_list {
+        flex-direction: column;
+    }
+    .stack {
+        margin: 40px;
+    }
+    .testimonial_avarta {
+        width: 80px;
+        height: 80px;
+    }
 }
