@@ -16,6 +16,23 @@ document.addEventListener("scroll",  () => {
 
 });
 
+// 메뉴클릭시 해당 페이지로 이동
+const navbarMenu = document.querySelector('.navbar_menu');
+navbarMenu.addEventListener('click', (event) => {
+    console.log(event.target.dataset.link);
+    const target = event.target;
+    const link = target.dataset.link;
+    if(link == null) {
+        return;
+    }
+    const scrollTo = document.querySelector(link);
+
+    scrollTo.scrollIntoView({behavior:'smooth'});
+
+
+
+});
+
 
 
 
