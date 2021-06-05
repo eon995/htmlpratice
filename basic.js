@@ -6,8 +6,6 @@ const navbarheight = navbar.getBoundingClientRect().height;
 
 document.addEventListener("scroll",  () => {
 
-    console.log(navbarheight);
-
     if (window.scrollY > navbarheight) {
         navbar.classList.add('navbar-dark');
     } else {
@@ -26,14 +24,38 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
     const scrollTo = document.querySelector(link);
-
     scrollTo.scrollIntoView({behavior:'smooth'});
+});
 
+// contact me  버튼 누를시 contact 로 이동
 
+const contactMe = document.querySelector('.home_contact');
+
+contactMe.addEventListener('click', (event) => {
+   console.log('aaaa');
+    scrollIntoView('#contact');
+});
+
+//scroll시 fade out 효과 주기
+const Home = document.querySelector('#Home');
+const Homeheight = Home.getBoundingClientRect().height;
+document.addEventListener("scroll",  () => {
+
+    Home.style.opacity =1 -(scrollY/Homeheight);
 
 });
 
 
 
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+};
 
+function divisionHeight(height){
+    const divisionHome = (scrollY/height);
+    divisionHome.toFixed(2);
+    const opacityCal = 1-divisionHome;
 
+    return opacityCal;
+}
