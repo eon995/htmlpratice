@@ -10,7 +10,7 @@ document.addEventListener("scroll",  () => {
         navbar.classList.add('navbar-dark');
     } else {
         navbar.classList.remove('navbar-dark');
-    };
+    }
 
 });
 
@@ -25,6 +25,7 @@ navbarMenu.addEventListener('click', (event) => {
     }
     const scrollTo = document.querySelector(link);
     scrollTo.scrollIntoView({behavior:'smooth'});
+    navbarMenu.classList.remove('open');
 });
 
 // contact me  버튼 누를시 contact 로 이동
@@ -41,8 +42,17 @@ const Home = document.querySelector('#Home');
 const Homeheight = Home.getBoundingClientRect().height;
 document.addEventListener("scroll",  () => {
 
-    Home.style.opacity =1 -(scrollY/Homeheight);
+    Home.style.opacity =1 - (scrollY/Homeheight);
 
+});
+
+//메뉴 버튼 클릭시 메뉴활성화
+const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
+
+
+navbarToggleBtn.addEventListener('click',()=>{
+    const result = navbarMenu.classList.toggle('open');
+    console.log(result);
 });
 
 
@@ -50,12 +60,6 @@ document.addEventListener("scroll",  () => {
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:'smooth'});
-};
-
-function divisionHeight(height){
-    const divisionHome = (scrollY/height);
-    divisionHome.toFixed(2);
-    const opacityCal = 1-divisionHome;
-
-    return opacityCal;
 }
+
+
